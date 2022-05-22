@@ -1,9 +1,10 @@
-import { Router } from 'express';
-import { UserController } from '../controllers/UserController';
+import { Router } from "express";
+import { UserController } from "../controllers/UserController";
 
 const userRoutes = Router();
 const userController = new UserController();
 
-userRoutes.post('/users', userController.create)
+userRoutes.get("/users", userController.list);
+userRoutes.post("/users", userController.create);
 
-export { userRoutes }
+export { userRoutes };
